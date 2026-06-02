@@ -9,6 +9,17 @@
   
   <title>Библиотека игр Смешариков | SmesharikiHub</title>
 
+  <!-- Anti-Flash Inline Theme Initialization -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <!-- Google Fonts for modern fluid typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +42,12 @@
     
     <!-- Application Header -->
     <header>
+      <!-- Premium Animated Theme Toggle Button -->
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить цветовую тему" title="Переключить тему">
+        <i data-lucide="moon" class="theme-icon-moon"></i>
+        <i data-lucide="sun" class="theme-icon-sun"></i>
+      </button>
+
       <div class="logo-container">
         <div class="logo-icon">
           <i data-lucide="gamepad-2"></i>

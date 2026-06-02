@@ -388,6 +388,21 @@ function setupEventListeners() {
       renderGames();
     });
   });
+
+  // Premium Animated Theme Toggle click handler
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.hasAttribute("data-theme");
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  }
 }
 
 // Reset button inside empty search state
