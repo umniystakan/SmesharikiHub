@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Библиотека оригинальных компьютерных игр по мотивам вселенной Смешариков (2004-2012). Скачивайте оригинальные ISO-образы дисков!">
+  <meta name="keywords" content="Смешарики, ПК игры Смешарики, Круглая Компания, Компьютер Ёжика, скачать диски Смешариков, ISO Смешарики">
+  <meta name="author" content="SmesharikiHub">
+  
+  <title>Библиотека игр Смешариков | SmesharikiHub</title>
+
+  <!-- Google Fonts for modern fluid typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Premium Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lucide Modern Vector Icons (Loaded asynchronously for performance) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Decorative Animated Background Blobs for Visual depth -->
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+
+  <div class="container">
+    
+    <!-- Application Header -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-icon">
+          <i data-lucide="gamepad-2"></i>
+        </div>
+        <h1>SmesharikiHub</h1>
+      </div>
+      <p class="header-subtitle">
+        Архив компьютерных CD и DVD дисков по вселенной Смешариков. Полная коллекция ностальгических приключений из Ромашковой Долины!
+      </p>
+    </header>
+
+    <!-- Controls Panel (Interactive Search & Stats & Tabs) -->
+    <section class="controls-card" aria-label="Панель фильтров">
+      <!-- Premium Real-time search box -->
+      <div class="search-wrapper">
+        <i data-lucide="search" class="search-icon"></i>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Поиск игры по названию..." 
+          autocomplete="off"
+          aria-label="Поле поиска игры"
+        >
+        <button id="search-clear-btn" class="search-clear-btn" aria-label="Очистить поиск">
+          <i data-lucide="x" style="width:16px;height:16px;"></i>
+        </button>
+      </div>
+
+      <!-- Quick filters and item counters -->
+      <div class="stats-and-filters">
+        <div id="results-count" class="results-count" aria-live="polite">
+          Всего игр в каталоге: <span>0</span>
+        </div>
+        
+        <div class="filter-tabs" role="tablist" aria-label="Фильтр по количеству дисков">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Все игры</button>
+          <button class="filter-tab" data-filter="1" role="tab" aria-selected="false">1 диск</button>
+          <button class="filter-tab" data-filter="2" role="tab" aria-selected="false">2 диска</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Grid containing all generated game cards -->
+    <main>
+      <div id="games-grid" class="games-grid" aria-live="polite">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </main>
+
+    <!-- Beautiful Footer element -->
+    <footer>
+      <p>© 2026 SmesharikiHub. Создано с любовью к круглым персонажам.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem;">
+        Материалы об играх предоставлены сообществом Fandom. Ссылки на файлы ведут на открытые архивы Internet Archive.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Main Application Logic Script -->
+  <script src="app.js"></script>
+</body>
+</html>
